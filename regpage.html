@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="js/main.js"></script>
         <link rel="stylesheet" href="css/styles.css">
-        <title>COP4331 Login Page</title>
+        <title>COP4331 Register Page</title>
     </head>
 
     <body>
@@ -19,16 +19,20 @@
 
                 <main>
                     <form class="inputs">
+                        <input class="textboxes" type="text" name="firstName" id="firstName" placeholder="First Name">
+                        <br>
+                        <input class="textboxes" type="text" name="lastName" id="lastName" placeholder="Last Name">
+                        <br>
                         <input class="textboxes" type="text" name="username" id="username" placeholder="Username">
                         <br>
                         <input class="textboxes" type="password" name="password" id="password" placeholder="Password">
                         <br>
-                        <button type="button" class="buttons" onclick="doLogin();">Log In</button>
+                        <button type="button" class="buttons" onclick="doRegister();">Register</button>
                         <br>
-                        <div class="links" ><a href="regpage.html"><b>Register New Account</b></a></div>
+                        <div class="links" ><a href="index.html"><b>Back to Login</b></a></div>
                     </form>
                     <br>
-                    <div class="loginResult" id="loginResult"></div>
+                    <div class="loginResult" id="regResult"></div>
                 </main>
 
                 <footer class="main-footer">

@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "weezerfont";
+    src: url(weezerfont.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "weezerfont";
+}
+
+html {
+    background: rgb(68,74,85);
+    background: linear-gradient(90deg, rgba(68,74,85,1) 0%, rgba(91,98,110,1) 33%, rgba(117,123,135,1) 67%, rgba(163,169,180,1) 100%);
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+.main-header {
+    background-color: rgba(10, 90, 155, 0.404);
+    background-image: url(../images/HeaderBackground.jpg);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+main {
+    margin-top: 5%;
+}
+
+.inputs {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.textboxes {
+    margin-top: 5%;
+    width: 300px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6
+}
+
+.buttons {
+    margin-top: 20px;
+    margin-left: 28px;
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 100%;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6
+}
+
+.buttons:hover {
+    background-color: rgb(207, 207, 207);
+}
+
+.links {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.loginResult {
+    color:rgb(160, 0, 0);
+    text-align: center;
+    font-size: 30px;
+}
+
+.main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+}
