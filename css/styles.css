@@ -20,12 +20,14 @@ h1 {
     padding-bottom: 20px;
     font-size: 50px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.507);
 }
 
 h2 {
     font-size: 30px;
     color: white;
+}
+
+.darkBackground {
     background-color: rgba(0, 0, 0, 0.507);
 }
 
@@ -66,7 +68,7 @@ main {
     text-align: center;
     border-width: 4;
     border-color: #A47963;
-    background-color: #C1CAD6
+    background-color: #C1CAD6;
 }
 
 .buttons {
@@ -79,7 +81,7 @@ main {
     border-radius: 100%;
     border-width: 4;
     border-color: #A47963;
-    background-color: #C1CAD6
+    background-color: #C1CAD6;
 }
 
 .buttons:hover {
@@ -105,3 +107,56 @@ main {
     height: 2rem;
     text-align: center;
 }
+
+#contactPageName {
+    display: inline-block;
+}
+
+.logoutButton {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0%;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;
+    float: right;
+}
+
+.logoutButton:hover {
+    background-color: rgb(207, 207, 207);
+}
+
+#invisible {
+    display: none;
+}
+
+.contactSearchDiv {
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+#searchText {
+    width: 500px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;
+}
+
+#searchButton {
+    width: 200px;
+    height: 64px;
+    font-size: 40px;
+    cursor: pointer;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;
+}
+
