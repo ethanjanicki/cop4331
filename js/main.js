@@ -177,7 +177,7 @@ function addContact()
 	let newLast = document.getElementById("contactLast").value;
 	let newPhone = document.getElementById("contactPhone").value;
 	let newEmail = document.getElementById("contactEmail").value;
-	let userId = document.getElementById("invisible").innerHTML;
+	let userId = Number(document.getElementById("invisible").innerHTML);
 
 	if((newFirst.length < 1) || (newLast.length < 1) || (newPhone.length < 1) || (newEmail.length < 1)) 
 	{
@@ -216,7 +216,9 @@ function addContact()
 function searchContact() //ALTER
 {
 	let srch = document.getElementById("searchText").value;
-	let userId = document.getElementById("invisible").innerHTML;
+	let userId = Number(document.getElementById("invisible").innerHTML);
+
+	document.getElementsByTagName("p")[0].innerHTML = "";
 
 	if((srch.length < 1)) 
 	{
@@ -244,10 +246,16 @@ function searchContact() //ALTER
 			{
 				document.getElementById("contactSearchResult").innerHTML = "Contacts retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
+
+				if( jsonObject.results.length < 1 )
+				{		
+					document.getElementById("contactSearchResult").innerHTML = "No Records Found";
+					return;
+				}
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					contactList += jsonObject.results[i];
+					contactList += JSON.stringify(jsonObject.results[i]);
 					if( i < jsonObject.results.length - 1 )
 					{
 						contactList += "<br/>\r\n";
