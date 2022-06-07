@@ -134,10 +134,107 @@ main {
     display: none;
 }
 
+.openWindowDiv {
+    text-align: center;
+}
+
+#openWindow {
+    margin-top: 2%;
+    width: 300px;
+    height: 64px;
+    font-size: 40px;
+    cursor: pointer;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;    
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.contactAddDiv {
+    background: rgb(68,74,85);
+    background: linear-gradient(90deg, rgba(68,74,85,1) 0%, rgba(91,98,110,1) 33%, rgba(117,123,135,1) 67%, rgba(163,169,180,1) 100%);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.vertBox {
+    vertical-align: middle;
+}
+
+.left {
+    width: 20%;
+    float: left;
+    text-align: right;
+    font-size: 20px;
+}
+
+.right {
+    width: 60%;
+    margin-left: 10px;
+    float: left;
+}
+
+.addText {
+    margin-bottom: 1%;
+    width: 90%;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;
+}
+
+#addButton {
+    margin-top: 2%;
+    width: 300px;
+    height: 64px;
+    font-size: 40px;
+    cursor: pointer;
+    border-width: 4;
+    border-color: #A47963;
+    background-color: #C1CAD6;   
+}
+
+.contactAddResult {
+    margin-top: 1%;
+    color:rgb(10, 0, 146);
+    text-align: center;
+    font-size: 30px;
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus 
+{
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .contactSearchDiv {
     text-align: center;
-    margin-top: 5%;
-    
+    margin-top: 2%;
 }
 
 #searchText {
@@ -158,5 +255,12 @@ main {
     border-width: 4;
     border-color: #A47963;
     background-color: #C1CAD6;
+}
+
+#contactSearchResult {
+    margin-top: 1%;
+    color:rgb(160, 0, 0);
+    text-align: center;
+    font-size: 30px;
 }
 

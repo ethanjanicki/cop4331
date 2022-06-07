@@ -28,11 +28,48 @@
 
         <div id="invisible"></div>
 
+
+        <div class="openWindowDiv" >
+            <button id="openWindow">Add Contact</button>
+        </div>
+
+        <div id="modalDiv" class="modal">
+            <div class="contactAddDiv">
+                <span class="close">&times</span>
+                <br><br>
+                <div class="vertBox">
+                <div class="left"><b>First Name:</b></div>
+                <div class="right"><input type="text" class="addText" id="contactFirst" placeholder="First Name"/></div>
+                </div>
+                <div class="vertBox">
+                <div class="left"><b>Last Name:</b></div>
+                <div class="right"><input type="text" class="addText" id="contactLast" placeholder="Last Name"/></div>
+                </div>
+                <div class="vertBox">
+                <div class="left"><b>Phone #:</b></div>
+                <div class="right"><input type="text" class="addText" id="contactPhone" placeholder="123-456-7890"/></div>
+                </div>
+                <div class="vertBox">
+                <div class="left"><b>Email:</b></div>
+                <div class="right"><input type="text" class="addText" id="contactEmail" placeholder="example@gmail.com"/></div>
+                </div>
+                <button type="button" id="addButton" onclick="addContact();">Add Contact</button>
+                <div class="contactAddResult" id="contactAddResult"></div>
+            </div>
+
+            <script type="text/javascript" src="js/addkeypress.js"></script>
+        </div>
+
+        <script type="text/javascript" src="js/modal.js"></script>
+
         <div class="contactSearchDiv">
             <input type="text" id="searchText" placeholder="Search for contact"/>
             <button type="button" id="searchButton" onclick="searchContact();">Search</button>
             <br/>
             <span id="contactSearchResult"></span>
+
+            <script type="text/javascript" src="js/searchkeypress.js"></script>
+
             <p id="contactList"></p>
             <br/><br/>
         </div>
