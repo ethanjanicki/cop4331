@@ -31,7 +31,7 @@
         $stmt = $conn->prepare("DELETE from Contacts WHERE ID=? AND UserID=?");
 		$stmt->bind_param("ii", $id, $userId);
 		$stmt->execute();
-		returnWithError("Deleted Contact");
+		returnWithError("Successfully Deleted Contact");
         }
 
         $stmt1->close();

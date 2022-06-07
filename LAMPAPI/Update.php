@@ -27,7 +27,7 @@
 
         if( $searchCount == 0 )
 		{
-			returnWithError( "No Matching Record Found" );
+			returnWithError( "No Records Found" );
 		}
         
         else
