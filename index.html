@@ -7,6 +7,10 @@
         <script type="text/javascript" src="js/main.js"></script>
         <link rel="stylesheet" href="css/styles.css">
         <title>COP4331 Login Page</title>
+
+        <script type="text/javascript">
+            window.onunload = function(){}; 
+        </script>
     </head>
 
     <body>
@@ -31,6 +35,11 @@
                     <br>
                     <div class="loginResult" id="loginResult"></div>
                 </main>
+
+                <script>
+                    document.getElementById("username").value = "";
+                    document.getElementById("password").value = "";
+                </script>
 
                 <footer class="main-footer">
                     <div class="main-footer-container">
