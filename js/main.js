@@ -154,11 +154,42 @@ function readCookie()
 	if( userId < 0 )
 	{
 		window.location.href = "index.html";
+		return false;
 	}
 	else
 	{
 		document.getElementById("contactHeader").innerHTML = "Logged in as " + firstName + " " + lastName;
 		document.getElementById("invisible").innerHTML = "" + userId;
+		return true;
+	}
+}
+
+function readCookieAlt()
+{
+	userId = -1;
+	let data = document.cookie;
+	let splits = data.split(",");
+	for(var i = 0; i < splits.length; i++) 
+	{
+		let thisOne = splits[i].trim();
+		let tokens = thisOne.split("=");
+		if( tokens[0] == "firstName" )
+		{
+			firstName = tokens[1];
+		}
+		else if( tokens[0] == "lastName" )
+		{
+			lastName = tokens[1];
+		}
+		else if( tokens[0] == "userId" )
+		{
+			userId = parseInt( tokens[1].trim() );
+		}
+	}
+	
+	if( userId > 0 )
+	{
+		window.location.href = "contacts.html";
 	}
 }
 
@@ -202,6 +233,10 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+				document.getElementById("contactFirst").value = "";
+				document.getElementById("contactLast").value = "";
+				document.getElementById("contactPhone").value = "";
+				document.getElementById("contactEmail").value = "";
 			}
 		};
 		xhr.send(jsonPayload);
