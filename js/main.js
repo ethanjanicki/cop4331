@@ -295,10 +295,10 @@ function searchContact()
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
 					let sId = JSON.stringify(jsonObject.results[i].id);
-					let sFirst = jsonObject.results[i].firstName;
-					let sLast = jsonObject.results[i].lastName;
-					let sPhone = jsonObject.results[i].phone;
-					let sEmail = jsonObject.results[i].email;
+					let sFirst = JSON.stringify(jsonObject.results[i].firstName);
+					let sLast = JSON.stringify(jsonObject.results[i].lastName);
+					let sPhone = JSON.stringify(jsonObject.results[i].phone);
+					let sEmail = JSON.stringify(jsonObject.results[i].email);
 
 					contactList += `<tr><td>`+sFirst+`</td><td>`+sLast+`</td><td>`+sPhone+`</td><td>`+sEmail+`</td><td><button type='button' class='openUpdateWindow tableButtons' onclick='show();populateUpdate(`+sId+`,`+sFirst+`,`+sLast+`,`+sPhone+`,`+sEmail+`);'>Edit</button></td><td><button type='button' class='tableButtons' onclick='deleteContact(`+sId+`);'>Delete</button></td></tr>`;
 				}
