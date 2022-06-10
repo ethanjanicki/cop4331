@@ -34,10 +34,11 @@
 			$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 			$stmt->execute();
 			returnWithError("Successfully Registered User");
+			$stmt->close();
+			
 		}
 
 		$stmt1->close();
-		$stmt->close();
 		$conn->close();
 		
 	}
