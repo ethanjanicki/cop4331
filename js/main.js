@@ -109,7 +109,7 @@ function doRegister()
 
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("regResult").innerHTML = JSON.stringify(jsonObject.error);
+				document.getElementById("regResult").innerHTML = jsonObject.error;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -300,7 +300,16 @@ function searchContact()
 					let sPhone = JSON.stringify(jsonObject.results[i].phone);
 					let sEmail = JSON.stringify(jsonObject.results[i].email);
 
-					contactList += `<tr><td>`+sFirst+`</td><td>`+sLast+`</td><td>`+sPhone+`</td><td>`+sEmail+`</td><td><button type='button' class='openUpdateWindow tableButtons' onclick='show();populateUpdate(`+sId+`,`+sFirst+`,`+sLast+`,`+sPhone+`,`+sEmail+`);'>Edit</button></td><td><button type='button' class='tableButtons' onclick='deleteContact(`+sId+`);'>Delete</button></td></tr>`;
+					let nsFirst = sFirst.replace('"','');
+					let nsLast = sLast.replace('"','');
+					let nsPhone = sPhone.replace('"','');
+					let nsEmail = sEmail.replace('"','');
+					nsFirst = nsFirst.replace('"','');
+					nsLast = nsLast.replace('"','');
+					nsPhone = nsPhone.replace('"','');
+					nsEmail = nsEmail.replace('"','');
+
+					contactList += `<tr><td>`+nsFirst+`</td><td>`+nsLast+`</td><td>`+nsPhone+`</td><td>`+nsEmail+`</td><td><button type='button' class='openUpdateWindow tableButtons' onclick='show();populateUpdate(`+sId+`,`+sFirst+`,`+sLast+`,`+sPhone+`,`+sEmail+`);'>Edit</button></td><td><button type='button' class='tableButtons' onclick='deleteContact(`+sId+`);'>Delete</button></td></tr>`;
 				}
 				
 				document.getElementById("contactList").innerHTML = contactList;
