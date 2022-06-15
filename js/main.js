@@ -14,7 +14,7 @@ function doLogin()
 	
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
-//	var hash = md5( password );
+	let hash = md5( password );
 
 	if((login.length < 1) || (password.length < 1)) 
 	{
@@ -24,8 +24,8 @@ function doLogin()
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+	//let tmp = {login:login,password:password};
+	let tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -72,11 +72,11 @@ function doRegister()
 	let lastName = document.getElementById("lastName").value;
     let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
-//	var hash = md5( password );
+	let hash = md5( password );
 
 	if((firstName.length < 1) || (lastName.length < 1) || (login.length < 1) || (password.length < 1)) 
 	{
-		document.getElementById("regResult").innerHTML = "Please fill in all fields.";
+		document.getElementById("regResult").innerHTML = "&#9888 Please fill in all fields &#9888";
 		return;
 	}
 
@@ -86,14 +86,14 @@ function doRegister()
 
 	if((!password.match(passLow)) || (!password.match(passUp)) || (!password.match(passNum)) || (password.length < 8))
 	{
-		document.getElementById("regResult").innerHTML = "Password must be at least 8 characters long and <br> include at least one lowercase, uppercase, and digit";
+		document.getElementById("regResult").innerHTML = "&#9888 Password must be at least 8 characters long and <br> include at least one lowercase, uppercase, and digit &#9888";
 		return;
 	}
 
     document.getElementById("regResult").innerHTML = "";
 
-    let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
-//	var tmp = {login:login,password:hash};
+    //let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let tmp = {firstName:firstName,lastName:lastName,login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 
     let url = urlBase + '/Register.' + extension;
@@ -212,7 +212,8 @@ function addContact()
 
 	if((newFirst.length < 1) || (newLast.length < 1) || (newPhone.length < 1) || (newEmail.length < 1)) 
 	{
-		document.getElementById("contactAddResult").innerHTML = "Please fill in all fields.";
+		document.getElementById("contactAddResult").style.color = 'rgb(160, 0, 0)';
+		document.getElementById("contactAddResult").innerHTML = "&#9888 Please fill in all fields &#9888";
 		return;
 	}
 
@@ -232,6 +233,7 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+				document.getElementById("contactAddResult").style.color = 'rgb(10, 0, 146)';
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
 				document.getElementById("contactFirst").value = "";
 				document.getElementById("contactLast").value = "";
@@ -280,17 +282,17 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactSearchResult").innerHTML = "Contacts retrieved";
+				document.getElementById("contactSearchResult").innerHTML = "";
 				let jsonObject = JSON.parse( xhr.responseText );
 
 				if( jsonObject.results.length < 1 )
 				{		
-					document.getElementById("contactSearchResult").innerHTML = "No Records Found";
-					document.getElementById("contactList").innerHTML = "";
+					document.getElementById("contactSearchResult").innerHTML = "&#9888 No Records Found &#9888";
+					//document.getElementById("contactList").innerHTML = "";
 					return;
 				}
 
-				contactList += "<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email Address</th></tr>";
+				contactList += "<tr class='noBorder'><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email Address</th></tr>";
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
@@ -357,7 +359,7 @@ function editContact()
 
 	if((eFirst.length < 1) || (eLast.length < 1) || (ePhone.length < 1) || (eEmail.length < 1)) 
 	{
-		document.getElementById("contactUpdateResult").innerHTML = "Please fill in all fields.";
+		document.getElementById("contactUpdateResult").innerHTML = "&#9888 Please fill in all fields &#9888";
 		return;
 	}
 

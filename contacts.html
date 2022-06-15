@@ -22,7 +22,7 @@
     <body>
         <header class="main-header">
             <div class="darkBackground">
-                <h1 class="page-name" id="contactPageName">Welcome to the Group 6 Contacts Manager!</h1>
+                <h1 class="page-name" id="contactPageName"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Welcome to CityCard!</h1>
                 <button type="button" class="logoutButton" onclick="doLogout();"><b>Log Out</b></button>
             </div>
             <h2 class="darkBackground" id="contactHeader"></h2>
@@ -67,6 +67,7 @@
 
         <div id="modalUpdateDiv" class="modal">
             <div class="contactAddDiv">
+                <span class="close" onclick="hide();" >&times</span>
                 <br><br>
                 <div class="vertBox">
                 <div class="left"><b>First Name:</b></div>
@@ -100,11 +101,11 @@
             <input type="text" id="searchText" placeholder="Search for contact"/>
             <button type="button" id="searchButton" onclick="searchContact();">Search</button>
             <br/>
-            <div class="spacing"><span id="contactSearchResult"></span></div>
+            <div class="spacing" id="contactSearchResult"></div>
 
             <script type="text/javascript" src="js/searchkeypress.js"></script>
 
-            <div class="tableCenter" ><table id="contactList" class="center" ></table></div>
+            <div class="tableCenter"><table id="contactList" class="center"></table></div>
             <br/><br/>
         </div>
 
