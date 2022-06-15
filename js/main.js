@@ -18,7 +18,7 @@ function doLogin()
 
 	if((login.length < 1) || (password.length < 1)) 
 	{
-		document.getElementById("loginResult").innerHTML = "Please fill in all fields.";
+		document.getElementById("loginResult").innerHTML = "&#9888 Please fill in all fields &#9888";
 		return;
 	}
 	
